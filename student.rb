@@ -1,5 +1,5 @@
 require './person'
-
+# Student class
 class Student < Person
   attr_accessor :classroom
 
