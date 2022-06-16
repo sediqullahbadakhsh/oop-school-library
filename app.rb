@@ -5,7 +5,6 @@ require './student'
 require './teacher'
 require './rental'
 
-
 class App
   include Validations
   attr_accessor :books, :people
