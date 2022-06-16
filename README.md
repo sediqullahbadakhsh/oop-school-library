@@ -2,7 +2,8 @@
 
 # OOP School Library
 
-in this repo, I am creating a school library using Ruby OOP
+this project is used to manage school library and is build using Ruby OOP
+with this app a user can: Create (person,book,student,teacher...), List (books, rental and peoples) and Select (a book or person).
 
 ## Built With
 

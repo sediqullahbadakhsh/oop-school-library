@@ -1,4 +1,4 @@
-module validations
+module Validations
     def not_empty(message: 'Please enter value')
       print message
       value = gets.chomp

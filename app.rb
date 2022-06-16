@@ -7,7 +7,7 @@ require './rental'
 
 
 class App
-  include validations
+  include Validations
   attr_accessor :books, :people
 
   def initialize
