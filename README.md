@@ -2,6 +2,8 @@
 
 # OOP School Library
 
+in this repo, I am creating a school library using Ruby OOP
+
 ## Built With
 
 - Major languages: Ruby
@@ -20,7 +22,7 @@ To get a local copy up and running follow these simple example st
 Run the following command in your terminal to clone this repo to your local machine
 
 ```bash
-> git clone git@github.com:Have-Samuel/morse-code-message.git
+> git clone git@github.com:sediqullahbadakhsh/oop-school-library.git
 ```
 
 Change directory into the newly created project
