@@ -1,5 +1,5 @@
 require './book'
-require './validations.rb'
+require './validations'
 
 class CreateBook
   include Validations
