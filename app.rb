@@ -1,9 +1,8 @@
 require './validations'
 require './create_book'
 require './create_person'
-require './student'
-require './teacher'
 require './rental'
+require './create_rental'
 
 class App
   include Validations
@@ -12,9 +11,10 @@ class App
   def initialize
     @people = []
     @books = []
+    @rents = []
     @create_book = CreateBook.new(@books)
     @create_person = CreatePerson.new(@people)
-    @rents = []
+    @create_rental = CreateRental.new(@rents, @books, @people)
   end
 
   def run(choice)
@@ -28,7 +28,7 @@ class App
     when 4
       @create_book.create_book
     when 5
-      create_rental
+      @create_rental.create_rental
     when 6
       list_rental
     end
@@ -43,39 +43,6 @@ class App
   def list_people
     @people.each_with_index do |person, index|
       puts "#{index}) [#{person.class.name}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
-  end
-
-  def create_rental
-    select_book
-    select_person
-    date = date(message: "Date (format YYYY/MM/DD):\s")
-    rent = Rental.new(date, @book, @person)
-    @rents << rent unless @rents.include?(rent)
-    puts "Rental created successfully\n\n"
-  end
-
-  def select_book
-    return unless @books.length.positive?
-
-    loop do
-      puts 'Select a book from the following list by number'
-      list_books
-      number = gets.chomp
-      @book = @books[number.to_i]
-      break if number.to_i < @books.length and number.to_i >= 0 and number.length.positive?
-    end
-  end
-
-  def select_person
-    return unless @books.length.positive?
-
-    loop do
-      puts 'Select a person from the following list by number (not id)'
-      list_people
-      number = gets.chomp
-      @person = @people[number.to_i]
-      break if number.to_i < @people.length and number.to_i >= 0 and number.length.positive?
     end
   end
 
