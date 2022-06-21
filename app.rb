@@ -1,5 +1,5 @@
 require './validations'
-require './book'
+require './create_book'
 require './person'
 require './student'
 require './teacher'
@@ -12,7 +12,7 @@ class App
   def initialize
     @people = []
     @books = []
-    @book = nil
+    @create_book = CreateBook.new(@books)
     @person = nil
     @rents = []
   end
@@ -26,7 +26,7 @@ class App
     when 3
       create_person
     when 4
-      create_book
+      @create_book.create_book
     when 5
       create_rental
     when 6
@@ -87,14 +87,6 @@ class App
     specialization = not_empty(message: "Specialization:\s")
     teacher = Teacher.new(specialization, age, name: name)
     @people << teacher unless @people.include?(teacher)
-  end
-
-  def create_book
-    title = not_empty(message: "Title:\s")
-    author = not_empty(message: "Author:\s")
-    puts "Book created successfully \n\n"
-    book = Book.new(title, author)
-    @books << book unless @books.include?(book)
   end
 
   def create_rental
