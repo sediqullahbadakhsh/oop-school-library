@@ -4,7 +4,6 @@ require './validations'
 class CreateTeacher
   include Validations
 
-
   def initialize(people)
     @people = people
   end
@@ -17,5 +16,3 @@ class CreateTeacher
     @people << teacher unless @people.include?(teacher)
   end
 end
-
-

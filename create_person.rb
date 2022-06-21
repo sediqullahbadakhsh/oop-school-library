@@ -2,7 +2,6 @@ require './create_student'
 require './create_teacher'
 
 class CreatePerson
-  
   def initialize(person)
     @person = person
 

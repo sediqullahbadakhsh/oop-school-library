@@ -1,14 +1,12 @@
 require './student'
 require './validations'
 
-
 class CreateStudent
   include Validations
 
   def initialize(people)
     @people = people
   end
-
 
   def create_student
     age = numeric(message: "Age:\s")

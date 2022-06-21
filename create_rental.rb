@@ -3,7 +3,7 @@ require './validations'
 require './app'
 
 class CreateRental
-include Validations
+  include Validations
   def initialize(rents, books, people)
     @rents = rents
     @books = books
@@ -18,10 +18,10 @@ include Validations
     @rents << rent unless @rents.include?(rent)
     puts "Rental created successfully\n\n"
   end
-  
+
   def select_book
     return unless @books.length.positive?
-  
+
     loop do
       puts 'Select a book from the following list by number'
       @books.each_with_index do |book, index|
@@ -32,10 +32,10 @@ include Validations
       break if number.to_i < @books.length and number.to_i >= 0 and number.length.positive?
     end
   end
-  
+
   def select_person
     return unless @books.length.positive?
-  
+
     loop do
       puts 'Select a person from the following list by number (not id)'
       @people.each_with_index do |person, index|
