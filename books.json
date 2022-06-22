@@ -1,8 +1,4 @@
-require './validations'
-require './create_book'
-require './create_person'
-require './rental'
-require './create_rental'
+require 'json'
 
 class App
   include Validations
