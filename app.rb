@@ -46,6 +46,19 @@ class App
     end
   end
 
+  def load_rentals
+    if File.exist?('rentals.json')
+      data = JSON.parse(File.read('rentals.json'), create_additions: true)
+      data.map do |rentals|
+        person = @people.find{ |people| people.id == rentals['person_id'] }
+        book = @books.find{ |books| books.title == rentals['book_title'] }
+        @rents.push(Rental.new(rentals['date'], book, person))
+      end
+    else
+      []
+    end
+  end
+
   def list_books
     @books.each { |book| puts "Title: \"#{book.title}\", Author: \"#{book.author}\"" }
   end

@@ -4,6 +4,7 @@ def main
 
   app = App.new
   app.load_books
+  app.load_rentals
   loop do
     puts "Please choose an option by entering a number:
         1 - List all books
