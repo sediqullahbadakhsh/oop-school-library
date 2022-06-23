@@ -1,5 +1,9 @@
 require_relative '../teacher'
 
+class Teacher
+   
+end
+
 describe Teacher do 
   context 'It should create a teacher' do
    id = 9
