@@ -17,7 +17,7 @@ def main
     choice = gets.chomp.to_i
 
     if choice == 7
-      app.save_books
+      app.save_files
       break
     end
 

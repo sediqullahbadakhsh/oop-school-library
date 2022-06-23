@@ -74,12 +74,13 @@ class App
     id = gets.chomp.to_i
     puts "Rentals:\s"
     @rents.map do |rental|
-      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}\n\n" if id == rental.person.id
+      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}\n\n" 
     end
   end
 
-  def save_books
+  def save_files
     File.write('books.json', JSON.generate(@books))
+    File.write('rentals.json', JSON.generate(@rents))
   end
 
 end
