@@ -1,5 +1,5 @@
 module Validations
-  def not_empty(message: 'Please enter value')
+  def not_empty(message: 'Please enter a valid value')
     print message
     value = gets.chomp
     loop do
@@ -11,7 +11,7 @@ module Validations
     value
   end
 
-  def numeric(message: 'Please enter a value', error: "Please enter a number:\s")
+  def numeric(message: 'Please enter a valid value', error: "Please enter a valid number:\s")
     print message
     value = gets.chomp.to_i
     loop do
@@ -23,7 +23,7 @@ module Validations
     value
   end
 
-  def date(message: 'Please enter a value', error: "Please enter a date in the format YYYY/MM/DD:\s")
+  def date(message: 'Please enter a valid value', error: "Please enter a date in the format YYYY/MM/DD:\s")
     print message
     value = gets.chomp
     loop do

@@ -4,7 +4,6 @@ require './create_teacher'
 class CreatePerson
   def initialize(person)
     @person = person
-
     @create_student = CreateStudent.new(@person)
     @create_teacher = CreateTeacher.new(@person)
   end
