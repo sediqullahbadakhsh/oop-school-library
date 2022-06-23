@@ -1,7 +1,7 @@
 require_relative '../teacher'
 
 describe Teacher do 
-  context “When testing the HelloWorld class” do 
+  context “Should c” do 
      
      it "The say_hello method should return 'Hello World'" do 
         hw = HelloWorld.new 

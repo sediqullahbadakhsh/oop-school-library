@@ -1,14 +1,16 @@
 require_relative '../classroom'
-# require_relative '../student'
+require_relative '../student'
 
 describe Classroom do 
-  context “When testing the HelloWorld class” do 
-     
-     it "The say_hello method should return 'Hello World'" do 
-        hw = HelloWorld.new 
-        message = hw.say_hello 
-        expect(message).to eq "Hello World!" 
+  context 'It should add a classroom' do
+   classroom = Classroom.new('red')
+
+     it 'classroom should be an instance of class Classroom' do 
+        expect(classroom).to be_an_instance_of(Classroom)
      end
-     
+
+     it 'should add new student to classroom' do
+      classroom.add_student(Student.new(11, 18, 'Karim', parent_permission: true))
+     end
   end 
 end

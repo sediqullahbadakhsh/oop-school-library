@@ -1,13 +1,19 @@
 require_relative '../book'
 
 describe Book do 
-  context “When testing the HelloWorld class” do 
+  context 'It should create book' do 
      
-     it "The say_hello method should return 'Hello World'" do 
-        hw = HelloWorld.new 
-        message = hw.say_hello 
-        expect(message).to eq "Hello World!" 
+    title = 'animals'
+    author = 'Joe Doe'
+    book = Book.new(title, author)
+    
+     it 'should create an instance of class book' do 
+        expect(book).to be_an_instance_of(Book) 
      end
-     
+
+     it 'should check title and author of the book' do
+      expect(book.title).to eq(title)
+      expect(book.author).to eq(author)
+     end
   end 
 end
