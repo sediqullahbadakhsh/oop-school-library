@@ -1,13 +1,15 @@
 require_relative '../teacher'
 
 describe Teacher do 
-  context “Should c” do 
+  context 'It should create a teacher' do
+   id = 9
+   age = 48
+   name = 'Lexa'
+   specialization = 'History'
+   teacher = Teacher.new(id, age, name, specialization, parent_permission: true)
      
-     it "The say_hello method should return 'Hello World'" do 
-        hw = HelloWorld.new 
-        message = hw.say_hello 
-        expect(message).to eq "Hello World!" 
-     end
-     
+     it 'should create an instance of class student' do
+        expect(teacher).to be_an_instance_of(Teacher)
+     end     
   end 
 end
