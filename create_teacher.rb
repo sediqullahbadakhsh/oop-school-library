@@ -4,8 +4,8 @@ require './validations'
 class CreateTeacher
   include Validations
 
-  def initialize(people)
-    @people = people
+  def initialize(person)
+    @person = person
   end
 
   def create_teacher
@@ -13,6 +13,6 @@ class CreateTeacher
     name = not_empty(message: "Name:\s")
     specialization = not_empty(message: "Specialization:\s")
     teacher = Teacher.new(specialization, age, name: name)
-    @people << teacher unless @people.include?(teacher)
+    @person << teacher unless @person.include?(teacher)
   end
 end

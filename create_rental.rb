@@ -4,10 +4,11 @@ require './app'
 
 class CreateRental
   include Validations
+
   def initialize(rents, books, people)
     @rents = rents
-    @books = books
     @people = people
+    @books = books
   end
 
   def create_rental

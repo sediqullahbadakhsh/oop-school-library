@@ -1,10 +1,9 @@
 require './app'
+require 'json'
 def main
   puts 'Welcome to school Library App!'
-
   app = App.new
-  app.load_books
-  app.load_rentals
+  app.load_files
   loop do
     puts "Please choose an option by entering a number:
         1 - List all books
@@ -20,7 +19,6 @@ def main
       app.save_files
       break
     end
-
     app.run(choice)
   end
 

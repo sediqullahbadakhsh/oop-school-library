@@ -1,7 +1,6 @@
-require './person'
-# Teacher class
+require_relative './person'
 class Teacher < Person
-  attr_accessor :specialization
+  attr_accessor :parent_permission
 
   def initialize(specialization, age, name: 'Unknown', parent_permission: true)
     super(age, name: name, parent_permission: parent_permission)
@@ -11,10 +10,10 @@ class Teacher < Person
   def can_use_services?
     true
   end
-  
+
   def to_json(*args)
     {
-      JSON.create_id  => self.class.name,
+      JSON.create_id => self.class.name,
       'id' => @id,
       'specialization' => @specialization,
       'age' => @age,
