@@ -1,9 +1,11 @@
 require_relative '../student'
 require_relative '../person'
 
+require_relative '../classroom'
+
 describe Student do
   before(:each) do
-    @student = Student.new('A', 29, name: 'Someone', parent_permission: true)
+    @student = Student.new(Classroom.new('A'), 29, name: 'Someone', parent_permission: true)
   end
 
   it 'should have a name' do
@@ -28,5 +30,17 @@ describe Student do
 
   it 'should have a correct_name' do
     expect(@student.correct_name).to eq 'Someone'
+  end
+
+  it 'if it plays hooky ¯\(ツ)/¯' do
+    expect(@student.play_hooky).to eql("¯\(ツ)/¯")
+  end
+
+  it 'Create an instance of student class' do
+    expect(@student).to be_an_instance_of(Student)
+  end
+
+  it 'Check the classroom label' do
+    expect(@student.classroom.label).to eq('A')
   end
 end
