@@ -19,7 +19,7 @@ describe Teacher do
   it 'should have a can_use_services?' do
     expect(@teacher.can_use_services?).to eq true
   end
-  
+
   it 'should have a correct_name' do
     expect(@teacher.correct_name).to eq 'Someone'
   end
