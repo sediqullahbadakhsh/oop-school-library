@@ -26,13 +26,11 @@ describe Book do
     expect(@book.rentals.length).to eql 0
     rental = Rental.new('2022/02/02', @book, @student)
     @book.add_rental('2022-03-03', @student)
-    expect(@book.rentals.length).to eql 2 
+    expect(@book.rentals.length).to eql 2
   end
 
-  
   it 'Create JSON string' do
     json = JSON.generate(@book)
     expect(json).to eq '{"json_class":"Book","title":"animals","author":"Jon Doe"}'
   end
-
 end

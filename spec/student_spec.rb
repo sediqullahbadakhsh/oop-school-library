@@ -40,7 +40,6 @@ describe Student do
   end
 
   it 'Check the classroom label' do
-
     expect(@student.classroom.label).to eq('A')
   end
 end
