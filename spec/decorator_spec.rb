@@ -1,26 +1,16 @@
-require_relative '../nameable'
-require_relative '../student'
-require_relative '../capitalize_decorator'
-require_relative '../trimmer_decorator'
 require_relative '../decorator'
+require_relative '../nameable'
 
 describe Decorator do
-  before :each do
-    person = Student.new(12, 'lynnzahraa')
-    @name = Decorator.new(person)
-    @capitalize = CapitalizeDecorator.new(@name)
-    @trimmed = TrimmerDecorator.new(@name)
+  before(:each) do
+    @decorator = Decorator.new('Sediqullah')
   end
 
-  it 'returns the name' do
-    expect(@name.correct_name).to eql('lynnzahraa')
+  it 'should have a nameable' do
+    expect(@decorator.nameable).to eq('Sediqullah')
   end
 
-  it 'capitalizes the name' do
-    expect(@capitalize.correct_name).to eql('Lynnzahraa')
-  end
-
-  it 'trims the name' do
-    expect(@trimmed.correct_name).to eql('lynnzahra')
-  end
+  # it 'should return the name' do
+  #   expect(@decorator.correct_name).to eq('Sediqullah')
+  # end
 end

@@ -24,7 +24,6 @@ describe Book do
   it 'add a rental' do
     @student = Student.new('20', 'khan')
     expect(@book.rentals.length).to eql 0
-    rental = Rental.new('2022/02/02', @book, @student)
     @book.add_rental('2022-03-03', @student)
     expect(@book.rentals.length).to eql 2
   end

@@ -26,7 +26,6 @@ describe Person do
   it 'should add a rental to person' do
     expect(@person.rentals.length).to eq 0
     book = Book.new('Unit Testing', 'Khan')
-    rental = Rental.new('2022/02/02', book, @person)
     @person.add_rental('2022/02/02', book)
     expect(@person.rentals.length).to eq 1
   end
