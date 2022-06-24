@@ -1,8 +1,8 @@
 require_relative '../classroom'
 require_relative '../student'
 
-describe Classroom do 
-  before :each do
+describe Classroom do
+  before(:each) do
     @class = Classroom.new('A')
   end
 
@@ -20,8 +20,7 @@ describe Classroom do
     expect(@class.students).to eq []
   end
 
-  it "takes one parameter and returns a Classroom object" do
+  it 'takes one parameter and returns a Classroom object' do
     @class.should be_an_instance_of Classroom
   end
-
 end

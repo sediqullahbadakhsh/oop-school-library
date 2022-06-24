@@ -103,10 +103,10 @@ class App
 
   def list_rental
     print "ID of person:\s"
-    id = gets.chomp.to_i
+    # id = gets.chomp.to_i
     puts "Rentals:\s"
     @rents.map do |rental|
-      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}\n\n" 
+      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}\n\n"
     end
   end
 

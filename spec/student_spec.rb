@@ -13,7 +13,7 @@ describe Student do
   it 'should have an age' do
     expect(@student.age).to eq 29
   end
-  
+
   it 'should have rentals' do
     expect(@student.rentals).to eq([])
   end
