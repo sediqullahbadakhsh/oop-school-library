@@ -4,8 +4,8 @@ require './validations'
 class CreateStudent
   include Validations
 
-  def initialize(people)
-    @people = people
+  def initialize(person)
+    @person = person
   end
 
   def create_student
@@ -16,11 +16,11 @@ class CreateStudent
       permission = gets.chomp
       if %w[y Y].include?(permission)
         student = Student.new(nil, age, name: name, parent_permission: true)
-        @people << student unless @people.include?(student)
+        @person << student unless @person.include?(student)
         break
       elsif %w[n N].include?(permission)
         student = Student.new(nil, age, name: name, parent_permission: false)
-        @people << student unless @people.include?(student)
+        @person << student unless @person.include?(student)
         break
       end
     end
