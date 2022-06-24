@@ -106,7 +106,7 @@ class App
     id = gets.chomp.to_i
     puts "Rentals:\s"
     @rents.map do |rental|
-      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}\n\n" 
+      puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}\n\n"
     end
   end
 
