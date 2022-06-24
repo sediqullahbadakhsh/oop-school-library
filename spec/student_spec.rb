@@ -1,24 +1,32 @@
 require_relative '../student'
+require_relative '../person'
 
-describe Student do 
-  context 'It should create a student' do
-   id = 13
-   age = 28
-   name = 'Walker'
-   classroom = '4 red'
-   parent_permission = true
-   student = Student.new(id, age, name, classroom, parent_permission)
+describe Student do
+  before(:each) do
+    @student = Student.new('A', 29, name: 'Someone', parent_permission: true)
+  end
 
-     it 'should create an instance of class student' do
-        expect(student).to be_an_instance_of(Student)
-     end
+  it 'should have a name' do
+    expect(@student.name).to eq 'Someone'
+  end
 
-     it 'should check student details' do
-      expect(student.id).to eq(id)
-      expect(student.age).to eq(age)
-      expect(student.name).to eq(name)
-      expect(student.classroom).to eq(classroom)
-      expect(student.parent_permission).to eq(parent_permission)
-     end
-  end 
+  it 'should have an age' do
+    expect(@student.age).to eq 29
+  end
+  
+  it 'should have rentals' do
+    expect(@student.rentals).to eq([])
+  end
+
+  it 'should have a parent_permission' do
+    expect(@student.parent_permission).to eq true
+  end
+
+  it 'should have a can_use_services?' do
+    expect(@student.can_use_services?).to eq true
+  end
+
+  it 'should have a correct_name' do
+    expect(@student.correct_name).to eq 'Someone'
+  end
 end
