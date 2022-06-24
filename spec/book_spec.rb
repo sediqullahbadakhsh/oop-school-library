@@ -25,7 +25,7 @@ describe Book do
     @student = Student.new('20', 'khan')
     expect(@book.rentals.length).to eql 0
     @book.add_rental('2022-03-03', @student)
-    expect(@book.rentals.length).to eql 2
+    expect(@book.rentals.length).to eql 1
   end
 
   it 'Create JSON string' do
