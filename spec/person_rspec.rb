@@ -2,7 +2,6 @@ require_relative '../person'
 require_relative '../rental'
 require_relative '../book'
 
-
 describe Person do
   before(:each) do
     @person = Person.new(25, name: 'SomeOne', parent_permission: true)
@@ -31,5 +30,4 @@ describe Person do
     @person.add_rental('2022/02/02', book)
     expect(@person.rentals.length).to eq 1
   end
-
 end
