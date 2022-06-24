@@ -21,6 +21,7 @@ describe Book do
     expect(@book.rentals).to eq []
   end
 
+
   it 'add a rental' do
     @student = Student.new('20', 'khan')
     expect(@book.rentals.length).to eql 0
@@ -33,4 +34,5 @@ describe Book do
     json = JSON.generate(@book)
     expect(json).to eq '{"json_class":"Book","title":"animals","author":"Jon Doe"}'
   end
+
 end
